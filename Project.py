@@ -124,5 +124,5 @@ def Fd(x):
                     [9*x[0]**2*x[1], 3*x[0]**3 - 3*x[1]**2]])
 
 frac = fractal2D(F, Fd)
-frac.plot(100, -20, 20, -20, 20, True)
+frac.plot(100, -1, 2, -2.5, 2.5, True)
 plt.show()

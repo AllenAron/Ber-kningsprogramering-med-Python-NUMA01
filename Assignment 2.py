@@ -4,15 +4,15 @@ import matplotlib
 from scipy import *
 from matplotlib.pyplot import *
 import sys
-import numpy
+import numpy as np
 
 
 # Task 1
 
 def fixedPoint(a, x):
     i = 0
-    while(abs(x - (sin(x) - a * x + 30)) > 1.e-8):
-        x = sin(x)-a*x+30
+    while(abs(x - (np.sin(x) - a * x + 30)) > 1.e-8):
+        x = np.sin(x)-a*x+30
         i+=1
     return x
 
@@ -21,11 +21,11 @@ fixedPoint(0.5, 0.5)
 
 # Task 2
 
-x = numpy.linspace(5, 30)
+x = np.linspace(5, 30)
 value = []
 a = 0.5
 for k in x:
-    value.append(sin(k)-a*k+30)
+    value.append(np.sin(k)-a*k+30)
 print(value)
 matplotlib.pyplot.plot(x, value)
 matplotlib.pyplot.plot(x,x)
@@ -38,11 +38,11 @@ value = []
 n = 1
 x = 1
 while (x > 1.e-9):
-    x = (sin(n)**2)/n
+    x = (np.sin(n)**2)/n
     n += 1
     value.append(x)
 print(len(value))
-matplotlib.pyplot.plot(linspace(1, 356, 355), value)
+matplotlib.pyplot.plot(np.linspace(1, 356, 355), value)
 matplotlib.pyplot.show()
 
 
